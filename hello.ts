@@ -1,3 +1,3 @@
-import * as lodash from 'lodash'
+import upperCase from 'lodash-es/upperCase'
 
-console.log('Hello ' + lodash.capitalize('typescript') + '!')
+console.log('Hello ' + upperCase('typescript') + '!');

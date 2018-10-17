@@ -1,42 +1,23 @@
-TypeScript Lodash Import All Demo
-=================================
+TypeScript Use Lodash-ES Demo
+=============================
 
-Import all methods from lodash rather than a single method.
+Use `lodash-es` in typescript, but have errors.
 
 ```
 npm install
-npx ts-node hello.ts
+npm run demo
 ```
 
-It will print `Hello, TypeScript!`
-
-To work with WebStorm completion
---------------------------------
-
-如果想使用WebStorm的lodash提示功能，需要进行配置：
-
-![webstorm-lodash-1.jpg](./images/webstorm-lodash-1.jpg)
-
-安装完成后，确认多出了以下library:
-
-![webstorm-lodash-2.jpg](./images/webstorm-lodash-2.jpg)
-
-同时还需要注意：
+It reports error:
 
 ```
-import * as lodash from 'lodash'
+/Users/freewind/workspace/typescript-use-lodash-es-demo/node_modules/lodash-es/upperCase.js:1
+(function (exports, require, module, __filename, __dirname) { import createCompounder from './_createCompounder.js';
+                                                                     ^^^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected identifier
+    at new Script (vm.js:79:7)
+
 ```
 
-这里的`* as lodash`不能写成`* as _`，否则什么也提示不出来。
-
-![as-lodash](./images/as-lodash.jpg)
-
-![as-underscore](./images/as-underscore.jpg)
-
-原因在于，如果我们`* as _`，WebStorm会错误的把`_`指向lodash中已经定义了的`_`:
-
-![underscore](./images/underscore.jpg)
-
-![underscore-def](./images/underscore-def.jpg)
-
-所以我们需要使用一个不同的名字。
+How to fix it?
