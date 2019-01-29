@@ -20,4 +20,14 @@ SyntaxError: Unexpected identifier
 
 ```
 
-How to fix it?
+The reason is, when we use typescript or `ts-node`,
+it requires the code in packages are old plain JavaScript.
+
+But the code in "lodash-es", which uses `import from` syntax:
+
+```
+import createCompounder from './_createCompounder.js';
+```
+
+Without the help from webpack, typescript will keep code in packages unchanged,
+and node can't run them successfully without plugins.
